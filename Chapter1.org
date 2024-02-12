@@ -10,10 +10,17 @@
   - [[#tailwindcss][Tailwindcss]]
   - [[#framer-motion][Framer-motion]]
 - [[#setting-up-vercel][Setting up Vercel]]
+  - [[#setup-astro-for-vercel][Setup Astro for Vercel]]
+  - [[#import-project-to-vercel][Import Project to Vercel]]
 
 * Creating the project
 
-We are going to be using bun. You can install it using the following command.
+We are going to be using bun. You will need =nodejs= and =npm= as a prerequisite. You can install it using the following command.
+
+#+begin_src bash
+# Arch Linux
+paru -S nodejs npm
+#+end_src
 
 #+begin_quote
 Now bun will provide us with the node runtime in which the application will run. You can think of this like the JVM (not really).
@@ -72,6 +79,28 @@ We are now going to setup CI/CD with Vercel so we can know what commits fail in 
 
 First let's make sure we have our code pushed to GitHub/GitLab.
 
+** Setup Astro for Vercel
+
+Before we start importing our project into vercel, we need to add some dependencies needed for Astro to be hosted on Vercel.
+
+#+begin_src bash
+bunx astro add vercel
+#+end_src
+
+Lets also add a =.nvmrc= to mention our preferred node version. Astro requires a minimum of node version =18.14.1=. So we are going to deploy using Node version 20. The =.nvmrc= is used to infer the version of node to use.
+
+#+begin_src
+20
+#+end_src
+
+** Import Project to Vercel
+
 Lets create/login in to your account on [[https://vercel.com][Vercel]].
 
-You can import a project
+You can import a project using Add new -> Project.
+
+[[./tutorial-assets/vercel_init.png]]
+
+Then use the following settings.
+
+[[./tutorial-assets/vercel_settings.png]]
