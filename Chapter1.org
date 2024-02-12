@@ -1,0 +1,77 @@
+#+title: Chapter 1: Getting started with Astro and CI/CD
+#+author: Atri Hegde
+
+* Preface
+
+* TOC :TOC:
+- [[#preface][Preface]]
+- [[#creating-the-project][Creating the project]]
+  - [[#react][React]]
+  - [[#tailwindcss][Tailwindcss]]
+  - [[#framer-motion][Framer-motion]]
+- [[#setting-up-vercel][Setting up Vercel]]
+
+* Creating the project
+
+We are going to be using bun. You can install it using the following command.
+
+#+begin_quote
+Now bun will provide us with the node runtime in which the application will run. You can think of this like the JVM (not really).
+
+We will also use bun to install packages from NPM package registry.
+#+end_quote
+
+#+begin_src bash
+curl -fsSL https://bun.sh/install | bash
+#+end_src
+
+[[./tutorial-assets/create_project.png]]
+
+Now lets =cd personal-website= and delete the pesky =.vscode/= folder by using =rm -rf .vscode=.
+
+Next let us setup our standard development environment.
+We are going with React + Tailwindcss + Framer Motion.
+
+The best way to know how we can do this is using the [[https://docs.astro.build/en/getting-started/][Astro documentation]].
+
+#+begin_quote
+All of the commands below need to executed in the root of the project folder.
+#+end_quote
+
+** React
+
+With Astro we still get to use our preferred component/ui framework with great integration. For this we will use the =astro add= command to add react
+
+#+begin_src bash
+bunx astro add react
+#+end_src
+
+** Tailwindcss
+
+We can also use the =astro add= command to add tailwindcss.
+
+#+begin_src bash
+bunx astro add tailwindcss
+#+end_src
+
+If you are unsure on tailwindcss, I highly encourage you to learn this from the sessions or from their [[https://tailwindcss.com/docs/installation][documentation]].
+
+TLDR: you have standardised inline css.
+
+** Framer-motion
+
+We are be going to using =framer-motion= to add some animations at the end of the project.
+
+#+begin_src bash
+bun add framer-motion
+#+end_src
+
+* Setting up Vercel
+
+We are now going to setup CI/CD with Vercel so we can know what commits fail in prod.
+
+First let's make sure we have our code pushed to GitHub/GitLab.
+
+Lets create/login in to your account on [[https://vercel.com][Vercel]].
+
+You can import a project
