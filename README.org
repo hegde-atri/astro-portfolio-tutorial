@@ -1,0 +1,7 @@
+#+title: README
+#+author: Atri Hegde
+
+This is an X part series where we will get you close to building a personal website.
+
+* Chapters
+- [[./Chapter1.org][Chapter 1: Getting started with Astro and CI/CD]]
