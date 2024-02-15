@@ -101,6 +101,18 @@ You can import a project using Add new -> Project.
 
 [[./tutorial-assets/vercel_init.png]]
 
-Then use the following settings.
+Select your repository and then click deploy. It should just succeed and you should be able to connect to your domain to this now if you have one.
 
-[[./tutorial-assets/vercel_settings.png]]
+[[./tutorial-assets/vercel_success.png]]
+
+*** Adding your domain
+
+In your project settings go to the domains tab, type in your domain and click add.
+
+[[./tutorial-assets/vercel_adding_domain1.png]]
+
+Now you will need to add a new CNAME value to your DNS manager, usually just your domain registrar.
+
+[[./tutorial-assets/vercel_adding_domain2.png]]
+
+Wait for a few minutes for the changes to propagate and by the time you make the next few commits, you should be able to visit your website.
